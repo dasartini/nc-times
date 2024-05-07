@@ -3,11 +3,9 @@ import NavBar from './components/NavBar'
 import Home from './components/Home'
 import { Routes , Route } from 'react-router-dom'
 import AllArticles from './components/AllArticles'
-// import { useEffect } from 'react'
 import ArticleById from './components/ArticleById'
 
 function App() {
-// const [loading ,setLoading] = useEffect(false)
 
 
   return (
