@@ -1,0 +1,15 @@
+.goodBox{
+    background-color: #eeb61d;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    transition: box-shadow 0.3s ease;
+    align-self: center;
+    list-style-type: none;
+}
+.goodBox:hover {
+    filter: brightness(120%);
+    width: 100%;
+    height: 100%;
+  }
+  
