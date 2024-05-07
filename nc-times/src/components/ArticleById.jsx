@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom"
 import { getArticleById } from "../api"
 import GoodBox from "../resources/GoodBox"
 import Loading from "../resources/Loading"
+import Comments from "./Comments"
 
 
 function ArticleById() {
@@ -31,6 +32,7 @@ function ArticleById() {
                 </h4>
                 <p>{articleId.body}</p>
                 <p>Posted at: {articleId.created_at}</p>
+                <Comments article_id ={article_id}/>
                 <Link to={'/AllArticles'}> <button> Go back</button></Link>
             </div>
         </GoodBox>
