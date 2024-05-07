@@ -4,35 +4,35 @@ function NavBar (){
 
     return(<>
     <NavStyle>
-    <nav class="menu" id="nav">
-	<span class="nav-item active">
-		<span class="icon">
+    <nav className="menu" id="nav">
+	<span className="nav-item active">
+		<span className="icon">
 			<i data-feather="home"></i>
 		</span>
 		<Link to={'/'}>Home</Link>
 	</span>
-	<span class="nav-item">
-		<span class="icon">
+	<span className="nav-item">
+		<span className="icon">
 			<i data-feather="search"></i>
 		</span>
 		<Link to={'/allArticles'}>All Articles</Link>
 	</span>
-	<span class="nav-item">
-		<span class="icon">
-			<span class="subicon">13</span>
+	<span className="nav-item">
+		<span className="icon">
+			<span className="subicon">13</span>
 			<i data-feather="bell"></i>
 		</span>
 		<a href="#">Notifications</a>
 	</span>
-	<span class="nav-item">
-		<span class="icon">
+	<span className="nav-item">
+		<span className="icon">
 			<i data-feather="star"></i>
 		</span>
 		<a href="#">Favorites</a>
 	</span>
-	<span class="nav-item">
-		<span class="icon">
-			<span class="subicon">1</span>
+	<span className="nav-item">
+		<span className="icon">
+			<span className="subicon">1</span>
 			<i data-feather="bell"></i>
 		</span>
 		<a href="#">Your Profile</a>
