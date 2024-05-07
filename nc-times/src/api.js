@@ -21,3 +21,11 @@ export function getCommentsByArticleId(article_id){
         
     })
 }
+
+export function patchArticleById(article_id){
+const votes= {inc_votes: 1}
+return axios.patch(`https://project-nc-news-adrian-sartini.onrender.com/api/articles/${article_id}`, votes )
+.then((data)=>{
+    return data
+})
+}

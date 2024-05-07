@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getCommentsByArticleId } from "../api";
+import { getCommentsByArticleId, patchArticleById } from "../api";
 import CommentBox from "../resources/CommentBox";
 
 function Comments({ article_id }) {
@@ -10,21 +10,25 @@ function Comments({ article_id }) {
             .then((data) => {
                 setComments(data);
             });
+    
     }, []);
 
     return (
-       
+       <> 
+       <h3>Comments on this post:</h3>
         <div>
            {comments.map((comment)=>{
             return (
-            <ul>
+            <ul key={comment.comment_id}>
                 <h5>{comment.author} at {comment.created_at}</h5>
                 <p>{comment.body}</p>
-                <button><img className="like" src="https://i.pinimg.com/736x/8f/70/d4/8f70d42e7bd7d3a74e74e895b36293d4.jpg"></img></button> {comment.votes}<button><img className="like" src="https://i.imgflip.com/2qui05.jpg"></img></button>
+                <button ><img className="like" src="https://i.pinimg.com/736x/8f/70/d4/8f70d42e7bd7d3a74e74e895b36293d4.jpg"></img></button> {comment.votes}<button><img className="like" src="https://i.imgflip.com/2qui05.jpg"></img></button>
             </ul>
             )
            })}
         </div>
+       
+        </>
     );
 }
 
