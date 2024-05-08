@@ -27,10 +27,23 @@ const votes= {inc_votes: newVote}
 return axios.patch(`https://project-nc-news-adrian-sartini.onrender.com/api/articles/${article_id}`, votes )
 .then((data)=>{
     return data.data.article.votes
-
 }).catch((err)=>{
     if(err){
         return err
     }
 })
+}
+
+export function postArticleById(article_id, newComment){
+
+    
+    return axios.post(`https://project-nc-news-adrian-sartini.onrender.com/api/articles/${article_id}/comments`, newComment)
+    .then((data)=>{
+        return data
+    })
+    .catch((err)=>{
+        if(err){
+            return err
+        }
+    })
 }
