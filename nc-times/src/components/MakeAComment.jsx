@@ -22,6 +22,7 @@ function MakeAComment({ article_id }) {
 
 
     }
+    useEffect(()=>{},[])
 
     return (
         <form

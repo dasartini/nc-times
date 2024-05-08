@@ -39,7 +39,7 @@ export function postArticleById(article_id, newComment){
     
     return axios.post(`https://project-nc-news-adrian-sartini.onrender.com/api/articles/${article_id}/comments`, newComment)
     .then((data)=>{
-        return data
+        return data.data.newComment.body
     })
     .catch((err)=>{
         if(err){
@@ -51,7 +51,7 @@ export function postArticleById(article_id, newComment){
 export function getAllUsers(){
 return axios.get("https://project-nc-news-adrian-sartini.onrender.com/api/users/")
 .then((data)=>{
-    return data
+    return data.data.users
 }).catch((err)=>{
     if(err){
         return err

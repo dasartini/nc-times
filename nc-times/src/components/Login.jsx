@@ -5,15 +5,24 @@ import { getAllUsers } from "../api"
 
 function Login(){
 const [user, setUser] = useState('')
+const [loginStatus, setLogingStatus]= useState(false)
+
 function handleSubmit(event){
+event.preventDefault()
 getAllUsers().then((data)=>{
-setUser('')
-console.log(data)
+for(let userData of data){
+	console.log(userData.username)
+	console.log(user)
+	console.log(userData.username === user)
+	if(userData.username === user){return setLogingStatus(true)
+
+}else  setLogingStatus(false)
+}
 })
 }
 
 
-    return(<>
+return(<>
     <GoodBox>
         <LoginStyle>
         <div className="loginStyle">
@@ -46,20 +55,4 @@ console.log(data)
 </>)
 }
 
-//         <>
-//         <GoodBox>
-//         <form>
-// <label className="login" htmlFor="login-input" >
-// Provide your username
-// </label>
-// <input type="text"
-// id="login-input"
-// ></input>
-//         </form>
-//         <button className="button-85">LOG ME IN</button>
-//         </GoodBox>
-//     EEEEEEEEEEEEEEEEEEEE
-//         </>
-
-
-export default Login
+ export default Login
