@@ -22,10 +22,15 @@ export function getCommentsByArticleId(article_id){
     })
 }
 
-export function patchArticleById(article_id){
-const votes= {inc_votes: 1}
+export function patchArticleById( article_id, newVote){
+const votes= {inc_votes: newVote}
 return axios.patch(`https://project-nc-news-adrian-sartini.onrender.com/api/articles/${article_id}`, votes )
 .then((data)=>{
-    return data
+    return data.data.article.votes
+
+}).catch((err)=>{
+    if(err){
+        return err
+    }
 })
 }

@@ -10,20 +10,22 @@ function ArticleById() {
 
     const [loading, setLoading] = useState(true);
     const [articleId, setArticleId] = useState({})
+    const [like, setLike] = useState('')
     const { article_id } = useParams()
 
     useEffect(() => {
         setLoading(true)
         getArticleById(article_id)
             .then((articleData) => {
+                setLike(articleData.votes)
                 setLoading(false)
                 setArticleId(articleData)
             })
     }, [])
-    function clicker(){
-patchArticleById(article_id)
-.then((data)=>{
-    console.log(article_id)
+
+    function handleVote(vote){
+patchArticleById(article_id, vote).then((data)=>{
+setLike(data)
 })
     }
 
@@ -39,8 +41,9 @@ patchArticleById(article_id)
                     <p>{articleId.body}</p>
                     <p>Posted at: {articleId.created_at}</p>
                     <p>Did you like this article?</p>
-                    <button onClick={clicker} title="Up vote me!" className="upVote">{articleId.votes}</button>
-                    <p>{articleId.votes} People like this article</p>
+                    <button onClick={()=>{handleVote(1)}} title="Up vote me!" className="upVote">Like</button>
+                    <button onClick={()=>{handleVote(-1)}} title="Down vote me!" className="downVote"> No Like</button>
+                    <p>{like} People like this article</p>
                     <Comments article_id={article_id} />
                     <Link to={'/AllArticles'}> <button> Go back</button></Link>
                 </div>
