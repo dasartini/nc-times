@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react"
 import { getAllArticles } from "../api"
-import GoodBox from "../resources/GoodBox"
-import { Link } from "react-router-dom"
 import Loading from "../resources/Loading"
-
+import ArticleCard from "../resources/ArticleCard"
 function AllArticles() {
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -21,15 +19,7 @@ function AllArticles() {
             (<div>
                 <ul>
                     {articles.map((article) => (
-                        <div key={article.article_id}>
-                            <GoodBox>
-                                <img src={article.article_img_url} alt="Article" />
-                                <h4>{article.title}</h4>
-                                <p>Author: {article.author}</p>
-                                <p>Votes: {article.votes}</p>
-                                <Link to={`/AllArticles/${article.article_id}`}><p>Read full </p></Link>
-                            </GoodBox>
-                        </div>
+                       <ArticleCard key={article.article_id} article={article}></ArticleCard>
                     ))}
                 </ul>
             </div>
