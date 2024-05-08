@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getCommentsByArticleId, patchArticleById } from "../api";
 import CommentBox from "../resources/CommentBox";
+import MakeAComment from "./MakeAComment";
 
 function Comments({ article_id }) {
     const [comments, setComments] = useState([]);
@@ -26,6 +27,7 @@ function Comments({ article_id }) {
             </ul>
             )
            })}
+
         </div>
        
         </>

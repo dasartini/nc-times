@@ -4,7 +4,7 @@ import { getArticleById, patchArticleById } from "../api"
 import GoodBox from "../resources/GoodBox"
 import Loading from "../resources/Loading"
 import Comments from "./Comments"
-
+import MakeAComment from "./MakeAComment"
 
 function ArticleById() {
 
@@ -41,13 +41,14 @@ setLike(data)
                     <p>{articleId.body}</p>
                     <p>Posted at: {articleId.created_at}</p>
                     <p>Did you like this article?</p>
-                    <button onClick={()=>{handleVote(1)}} title="Up vote me!" className="upVote">Like</button>
-                    <button onClick={()=>{handleVote(-1)}} title="Down vote me!" className="downVote"> No Like</button>
+                    <button onClick={()=>{handleVote(1)}} title="Up vote me!" className="button-85">Like</button>
+                    <button onClick={()=>{handleVote(-1)}} title="Down vote me!" className="button-85"> No Like</button>
                     <p>{like} People like this article</p>
                     <Comments article_id={article_id} />
                     <Link to={'/AllArticles'}> <button> Go back</button></Link>
+                    <MakeAComment article_id={article_id}/>
                 </div>
-            </GoodBox>
+            </GoodBox >
         )}
         </>
     )
