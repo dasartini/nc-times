@@ -34,7 +34,7 @@ function NavBar() {
 					<span className="icon">
 						<i data-feather="bell"></i>
 					</span>
-					<Link to={"/Login"}><a href="#">Login</a></Link>
+					<Link to={"/Login"}>Login</Link>
 				</span>
 			</nav>
 		</NavStyle>
