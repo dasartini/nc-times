@@ -47,3 +47,14 @@ export function postArticleById(article_id, newComment){
         }
     })
 }
+
+export function getAllUsers(){
+return axios.get("https://project-nc-news-adrian-sartini.onrender.com/api/users/")
+.then((data)=>{
+    return data
+}).catch((err)=>{
+    if(err){
+        return err
+    }
+})
+}

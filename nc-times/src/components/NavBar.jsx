@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import NavStyle from "../resources/NavStyle"
+
 function NavBar() {
 
 	return (<>
@@ -33,7 +34,7 @@ function NavBar() {
 					<span className="icon">
 						<i data-feather="bell"></i>
 					</span>
-					<a href="#">Your Profile</a>
+					<Link to={"/Login"}><a href="#">Login</a></Link>
 				</span>
 			</nav>
 		</NavStyle>
