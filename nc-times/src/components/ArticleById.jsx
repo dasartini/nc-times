@@ -11,7 +11,8 @@ function ArticleById() {
     const [loading, setLoading] = useState(true);
     const [articleId, setArticleId] = useState({})
     const [like, setLike] = useState('')
-    const { article_id } = useParams()
+    const { article_id, comment_id } = useParams()
+    const [username ,setUsername]=useState("jessjelly")
 
     useEffect(() => {
         setLoading(true)
@@ -45,7 +46,7 @@ setLike(data)
                     <button onClick={()=>{handleVote(-1)}} title="Down vote me!" className="button-85"> No Like</button>
                     <p>{like} People like this article</p>
                     <MakeAComment article_id={article_id}/>
-                    <Comments article_id={article_id} />
+                    <Comments username={username} article_id={article_id} comment_id={comment_id} />
                     <Link to={'/AllArticles'}> <button> Go back</button></Link>
                    
                 </div>

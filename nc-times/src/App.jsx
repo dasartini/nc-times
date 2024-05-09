@@ -5,11 +5,15 @@ import { Routes , Route } from 'react-router-dom'
 import AllArticles from './components/AllArticles'
 import ArticleById from './components/ArticleById'
 import Login from "./components/Login"
+import { LoggingStatusProvider} from './context/LogingStatus'
+
 function App() {
 
 
   return (
+    
     <>
+<LoggingStatusProvider>
     <NavBar/>
    
   
@@ -24,6 +28,7 @@ function App() {
  
    
     </Routes>
+    </LoggingStatusProvider>
     </>
   )
 }

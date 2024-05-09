@@ -58,3 +58,14 @@ return axios.get("https://project-nc-news-adrian-sartini.onrender.com/api/users/
     }
 })
 }
+
+// export function deleteCommentById(comment_id){
+// return axios.delete(`https://project-nc-news-adrian-sartini.onrender.com/api/comments/${comment_id}`)
+// .then((data)=>{
+//     return data})
+//     .catch((err)=>{
+//         if(err){
+//             return err
+//         }
+//     })
+// }
