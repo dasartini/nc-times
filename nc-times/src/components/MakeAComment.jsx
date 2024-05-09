@@ -4,27 +4,25 @@ import { postArticleById } from "../api";
 
 function MakeAComment({ article_id }) {
     const [newComment, setNewComment] = useState('')
-    const [comment, setComment] = useState('')
-    const [isLoading, setIsLoading]= useState(false)
+    const [isLoading, setIsLoading] = useState(false)
 
     function handleSubmit(event) {
-        setIsLoading(true)
         event.preventDefault()
-        setComment({
+        setIsLoading(true)
+
+        const commentData = {
             username: "jessjelly",
             body: newComment
-        })
-        setNewComment('')
-    }
+        }
+        postArticleById(article_id, commentData)
+            .then((data) => {
+                setNewComment('')
+                setIsLoading(false)
+            })
 
-    useEffect(() => {
-        postArticleById(article_id, comment).then((data) => {
-            setNewComment(comment)
-        }).then(()=>{
-            setNewComment('')
-            setIsLoading(false)
-        })
-    }, [comment])
+
+    }
+    useEffect(()=>{},[])
 
     return (
         <form
@@ -42,7 +40,7 @@ function MakeAComment({ article_id }) {
                 }}
 
             />
-<button title="Post a comment" className="button-85">{isLoading ? (<>Pasting</>) : (<>Post</>) } </button>
+            <button title="Post a comment" className="button-85">{isLoading ? (<>Pasting</>) : (<>Post</>)} </button>
 
 
         </form>
