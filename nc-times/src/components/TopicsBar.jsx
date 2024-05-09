@@ -22,7 +22,7 @@ function handleClickCooking(){
      setArticles(data)
 })
 
-useEffect(()=>{setArticles},[articles])
+
 }
 
     return(

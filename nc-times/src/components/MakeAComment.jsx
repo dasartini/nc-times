@@ -9,23 +9,22 @@ function MakeAComment({ article_id, comments, setComments }) {
     function handleSubmit(event) {
         event.preventDefault()
         setIsLoading(true)
+console.log(newComment)
 
         const commentData = {
             username: "jessjelly",
-            body: newComment
+            body: newComment,
+            author: "jessjelly",
+            created_at: "just now",
+            votes: 0
+            
         }
         postArticleById(article_id, commentData)
         setComments((currComments)=>{
-          return [...currComments, commentData]
+          return [commentData, ...currComments]
         
         })
         setNewComment('')
-
-            // .then((data) => {
-            //     console.log(comments)
-            // setIsLoading(false)
-            // })
-            // setNewComment('')
 
     }
     useEffect(()=>{},[])
