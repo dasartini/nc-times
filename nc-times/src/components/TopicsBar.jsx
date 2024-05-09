@@ -1,15 +1,16 @@
 import TopicBarStyle from "../resources/TopicBarStyle"
 import { getAllArticles } from "../api"
 import Suppliers from "./Suppliers"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 function TopicsBar(props) {
   const { articles, setArticles } = props
-
+  const [query, setQuery] = useState('')
   function handleClick(event) {
 
     getAllArticles(event).then((data) => {
       setArticles(data)
+      setQuery(event)
     })
   }
 
@@ -31,7 +32,7 @@ function TopicsBar(props) {
           </div>
         </div>
       </TopicBarStyle>
-      <Suppliers articles={articles} setArticles={setArticles} />
+      <Suppliers articles={articles} setArticles={setArticles} query={query} />
 
     </>
   )
