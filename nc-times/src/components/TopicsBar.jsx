@@ -1,23 +1,44 @@
 import TopicBarStyle from "../resources/TopicBarStyle"
+import { getArticleByTopic } from "../api"
 
-function TopicsBar(){
+function TopicsBar(props){
+const {articles, setArticles} = props
+
+    function handleClickCoding(articles){
+   getArticleByTopic("coding").then((data)=>{
+    setArticles(data)
+
+   })
+    }
+    function handleClickFootball(articles){
+        getArticleByTopic("football").then((data)=>{
+         setArticles(data)
+})
+}
+function handleClickCooking(articles){
+    getArticleByTopic("cooking").then((data)=>{
+     setArticles(data)
+})
+}
+
     return(
 
+    
         <>
         <TopicBarStyle>
-        <div class="topcoat-button-bar full">
-        <div class="topcoat-button-bar__item">
-          <button class="topcoat-button-bar__button full">Coding</button>
+        <div className="topcoat-button-bar full">
+        <div className="topcoat-button-bar__item">
+          <button onClick={()=>{handleClickCoding(articles)}} className="topcoat-button-bar__button full">Coding</button>
         </div>
-        <div class="topcoat-button-bar__item">
-          <button class="topcoat-button-bar__button full">Football</button>
+        <div className="topcoat-button-bar__item">
+          <button onClick={()=>{handleClickFootball(articles)}} className="topcoat-button-bar__button full">Football</button>
         </div>
-        <div class="topcoat-button-bar_
+        <div className="topcoat-button-bar_
      _item">
-          <button class="topcoat-button-bar__button full">Cooking</button>
+          <button onClick={()=>{handleClickCooking(articles)}} className="topcoat-button-bar__button full">Cooking</button>
         </div>
      </div>
-     <div class="spacer">
+     <div className="spacer">
 
      </div>
      </TopicBarStyle>

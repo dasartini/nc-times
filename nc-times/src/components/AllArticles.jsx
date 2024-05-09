@@ -19,7 +19,7 @@ function AllArticles() {
     return (<>
         {loading ? (<><Loading /></>) :
             (<div>
-                <TopicsBar />
+                <TopicsBar articles={articles} setArticles={setArticles} loading={loading} />
                 <ul>
                     {articles.map((article) => (
                         <ArticleCard key={article.article_id} article={article}></ArticleCard>
