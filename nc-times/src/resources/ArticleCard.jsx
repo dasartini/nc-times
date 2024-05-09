@@ -10,6 +10,7 @@ function ArticleCard({article}){
             <Card.Body className="cardBody">
                <Link to={`/AllArticles/${article.article_id}`}> <Card.Title><h3>{article.title}</h3></Card.Title></Link>
                 <Card.Text>Author: {article.author}</Card.Text>
+                <Card.Text>Topic: {article.topic}</Card.Text>
                 <Card.Text>Votes: {article.votes}</Card.Text>
                 <Link to={`/AllArticles/${article.article_id}`}>  <Button variant="primary">Read full article</Button></Link>
             </Card.Body>

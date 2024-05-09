@@ -15,7 +15,7 @@ function App() {
     <>
 <LoggingStatusProvider>
     <NavBar/>
-   
+  
   
     <Routes>
   
@@ -23,6 +23,7 @@ function App() {
    <Route path='/AllArticles' element={<AllArticles/>}/>
    <Route path='/AllArticles/:article_id' element={<ArticleById/> }/>
    <Route path='/Login' element={<Login/> }/>
+   
 
 
  
