@@ -1,8 +1,11 @@
 import axios from 'axios'
 
-export function getAllArticles() {
-    return axios.get('https://project-nc-news-adrian-sartini.onrender.com/api/articles')
-        .then((data) => {
+export function getAllArticles(topi, order) {
+    return axios.get('https://project-nc-news-adrian-sartini.onrender.com/api/articles/?',
+{params :{
+    topic: topi,
+    sort_by: order
+}}).then((data) => {
             return data.data.articles
         })
 }
