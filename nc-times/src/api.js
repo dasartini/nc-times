@@ -74,25 +74,3 @@ export function deleteCommentById(comment_id) {
         })
 }
 
-export function getArticleByTopic(topic){
-
-return axios.get(`https://project-nc-news-adrian-sartini.onrender.com/api/articles?topic=${topic}`)
-.then((data)=>{
-    return data.data.articles
-}).catch((err) => {
-    if (err) {
-        return err
-    }
-})
-}
-
-export function getArticlesQuery(query){
-return axios.get(`https://project-nc-news-adrian-sartini.onrender.com/api/articles?sort_by=${query}`)
-.then((data)=>{
-    return data.data.articles
-}).catch((err) => {
-    if (err) {
-        return err
-    }
-})
-}
