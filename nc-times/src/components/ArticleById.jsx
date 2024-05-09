@@ -7,7 +7,7 @@ import Comments from "./Comments"
 import MakeAComment from "./MakeAComment"
 
 function ArticleById() {
-
+    const [comments , setComments] = useState([])
     const [loading, setLoading] = useState(true);
     const [articleId, setArticleId] = useState({})
     const [like, setLike] = useState('')
@@ -45,8 +45,8 @@ setLike(data)
                     <button onClick={()=>{handleVote(1)}} title="Up vote me!" className="button-85">Like</button>
                     <button onClick={()=>{handleVote(-1)}} title="Down vote me!" className="button-85"> No Like</button>
                     <p>{like} People like this article</p>
-                    <MakeAComment article_id={article_id}/>
-                    <Comments username={username} article_id={article_id} comment_id={comment_id} />
+                    <MakeAComment comments={comments} setComments={setComments} article_id={article_id}/>
+                    <Comments comments={comments} setComments={setComments} username={username} article_id={article_id} comment_id={comment_id} />
                     <Link to={'/AllArticles'}> <button> Go back</button></Link>
                    
                 </div>

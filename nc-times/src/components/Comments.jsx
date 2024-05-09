@@ -3,8 +3,7 @@ import { getCommentsByArticleId, deleteCommentById } from "../api";
 import CommentBox from "../resources/CommentBox";
 import MakeAComment from "./MakeAComment";
 
-function Comments({ article_id, username }) {
-    const [comments, setComments] = useState([]);
+function Comments({ article_id, username ,comments, setComments}) {
 
     useEffect(() => {
 

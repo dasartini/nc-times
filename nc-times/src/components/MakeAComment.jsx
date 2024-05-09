@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { postArticleById } from "../api";
 
 
-function MakeAComment({ article_id }) {
+function MakeAComment({ article_id, comments, setComments }) {
     const [newComment, setNewComment] = useState('')
     const [isLoading, setIsLoading] = useState(false)
 
@@ -15,11 +15,17 @@ function MakeAComment({ article_id }) {
             body: newComment
         }
         postArticleById(article_id, commentData)
-            .then((data) => {
-                setNewComment('')
-                setIsLoading(false)
-            })
+        setComments((currComments)=>{
+          return [...currComments, commentData]
+        
+        })
+        setNewComment('')
 
+            // .then((data) => {
+            //     console.log(comments)
+            // setIsLoading(false)
+            // })
+            // setNewComment('')
 
     }
     useEffect(()=>{},[])
