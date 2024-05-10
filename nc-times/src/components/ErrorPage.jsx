@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom"
+
 function ErrorPage(props){
 
     
     return(
-    <img className="error-page" src="https://i.pinimg.com/originals/e2/b4/da/e2b4dabcaafdf9d8b6e1fa6bc3485326.gif"/> )
+   <Link to={'/'}> <img className="error-page" src="https://cdn.dribbble.com/users/912634/screenshots/4515634/media/048ca25f1d5bc0c023623a2ef1fe3a45.gif"/></Link> )
 }
 
 export default ErrorPage
