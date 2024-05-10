@@ -5,6 +5,7 @@ import GoodBox from "../resources/GoodBox"
 import Loading from "../resources/Loading"
 import Comments from "./Comments"
 import MakeAComment from "./MakeAComment"
+import ErrorPage from "./ErrorPage"
 
 function ArticleById() {
     const [comments , setComments] = useState([])
@@ -13,6 +14,7 @@ function ArticleById() {
     const [like, setLike] = useState('')
     const { article_id, comment_id } = useParams()
     const [username ,setUsername]=useState("jessjelly")
+    const [error, setError]= useState(null)
 
     useEffect(() => {
         setLoading(true)
@@ -21,6 +23,8 @@ function ArticleById() {
                 setLike(articleData.votes)
                 setLoading(false)
                 setArticleId(articleData)
+            }).catch((err)=>{
+                setError(err)
             })
     }, [])
 
@@ -29,7 +33,7 @@ patchArticleById(article_id, vote).then((data)=>{
 setLike(data)
 })
     }
-
+if(error){ return <ErrorPage/> }
     return (
         <>{loading ? (<><Loading /></>) : (
             <GoodBox>

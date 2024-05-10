@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 import { postArticleById } from "../api";
-
+import ErrorPage from "./ErrorPage";
 
 function MakeAComment({ article_id, comments, setComments }) {
     const [newComment, setNewComment] = useState('')
     const [isLoading, setIsLoading] = useState(false)
-    const [isError, setIsError]= useState(false)
+    const [isError, setIsError]= useState(null)
 
     function handleSubmit(event) {
         event.preventDefault()
@@ -21,7 +21,7 @@ function MakeAComment({ article_id, comments, setComments }) {
             
         }
         postArticleById(article_id, commentData).catch((err)=>{
-           setIsError(true)
+           setIsError(err)
         })
         setComments((currComments)=>{
           return [commentData, ...currComments]
@@ -32,6 +32,8 @@ function MakeAComment({ article_id, comments, setComments }) {
 
     }
     useEffect(()=>{},[])
+
+    if(isError){return <ErrorPage/>}
 
     return (
         <form
@@ -47,6 +49,7 @@ function MakeAComment({ article_id, comments, setComments }) {
                     setNewComment(event.target.value)
 
                 }}
+                required
 
             />
             <button title="Post a comment" className="button-85">{isLoading ? (<>Pasting</>) : (<>Post</>)} </button>
