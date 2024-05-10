@@ -1,9 +1,12 @@
 import TopicBarStyle from "../resources/TopicBarStyle"
 import { getAllArticles } from "../api"
 import Suppliers from "./Suppliers"
+import SortButtons from "./SortButton"
 import { useEffect, useState } from "react"
 
 function TopicsBar(props) {
+  const [show, setShow]= useState(false)
+  const [sequence, setSequence]= useState('')
   const { articles, setArticles } = props
   const [query, setQuery] = useState('')
   function handleClick(event) {
@@ -32,7 +35,10 @@ function TopicsBar(props) {
           </div>
         </div>
       </TopicBarStyle>
-      <Suppliers articles={articles} setArticles={setArticles} query={query} />
+      <Suppliers articles={articles} setArticles={setArticles} query={query} sequence={sequence} setSequence={setSequence} show={show} setShow={setShow} />
+      {show? (<SortButtons articles={articles} setArticles={setArticles} query={query} sequence={sequence}/>): (<>XD</>)}
+
+      
 
     </>
   )
