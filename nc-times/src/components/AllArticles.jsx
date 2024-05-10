@@ -3,10 +3,12 @@ import { getAllArticles } from "../api"
 import Loading from "../resources/Loading"
 import ArticleCard from "../resources/ArticleCard"
 import TopicsBar from './TopicsBar'
+import ErrorPage from "./ErrorPage"
 
 function AllArticles() {
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError]= useState(null)
 
     useEffect(() => {
         getAllArticles()
@@ -14,8 +16,11 @@ function AllArticles() {
                 setLoading(false);
                 setArticles(data);
             })
+            .catch((err)=>{setError({err})})
     }, []);
-
+if(error){ 
+    return (<ErrorPage/>)
+}else
     return (<>
         {loading ? (<><Loading /></>) :
             (<div>
