@@ -1,8 +1,12 @@
 import axios from 'axios'
 
-export function getAllArticles() {
-    return axios.get('https://project-nc-news-adrian-sartini.onrender.com/api/articles')
-        .then((data) => {
+export function getAllArticles(subject, sequence, order) {
+    return axios.get('https://project-nc-news-adrian-sartini.onrender.com/api/articles/?',
+{params :{
+    topic: subject,
+    sort_by: sequence,
+    sort_dir: order,
+}}).then((data) => {
             return data.data.articles
         })
 }
@@ -71,14 +75,3 @@ export function deleteCommentById(comment_id) {
         })
 }
 
-export function getArticleByTopic(topic){
-
-return axios.get(`https://project-nc-news-adrian-sartini.onrender.com/api/articles?topic=${topic}`)
-.then((data)=>{
-    return data.data.articles
-}).catch((err) => {
-    if (err) {
-        return err
-    }
-})
-}

@@ -2,24 +2,29 @@ import { useEffect, useState } from "react"
 import { postArticleById } from "../api";
 
 
-function MakeAComment({ article_id }) {
+function MakeAComment({ article_id, comments, setComments }) {
     const [newComment, setNewComment] = useState('')
     const [isLoading, setIsLoading] = useState(false)
 
     function handleSubmit(event) {
         event.preventDefault()
         setIsLoading(true)
+console.log(newComment)
 
         const commentData = {
             username: "jessjelly",
-            body: newComment
+            body: newComment,
+            author: "jessjelly",
+            created_at: "just now",
+            votes: 0
+            
         }
         postArticleById(article_id, commentData)
-            .then((data) => {
-                setNewComment('')
-                setIsLoading(false)
-            })
-
+        setComments((currComments)=>{
+          return [commentData, ...currComments]
+        
+        })
+        setNewComment('')
 
     }
     useEffect(()=>{},[])
