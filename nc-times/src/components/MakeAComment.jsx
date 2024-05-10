@@ -5,11 +5,12 @@ import { postArticleById } from "../api";
 function MakeAComment({ article_id, comments, setComments }) {
     const [newComment, setNewComment] = useState('')
     const [isLoading, setIsLoading] = useState(false)
+    const [isError, setIsError]= useState(false)
 
     function handleSubmit(event) {
         event.preventDefault()
         setIsLoading(true)
-console.log(newComment)
+
 
         const commentData = {
             username: "jessjelly",
@@ -19,11 +20,14 @@ console.log(newComment)
             votes: 0
             
         }
-        postArticleById(article_id, commentData)
+        postArticleById(article_id, commentData).catch((err)=>{
+           setIsError(true)
+        })
         setComments((currComments)=>{
           return [commentData, ...currComments]
         
         })
+    
         setNewComment('')
 
     }

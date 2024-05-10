@@ -31,10 +31,6 @@ export function patchArticleById(article_id, newVote) {
     return axios.patch(`https://project-nc-news-adrian-sartini.onrender.com/api/articles/${article_id}`, votes)
         .then((data) => {
             return data.data.article.votes
-        }).catch((err) => {
-            if (err) {
-                return err
-            }
         })
 }
 
@@ -45,22 +41,15 @@ export function postArticleById(article_id, newComment) {
         .then((data) => {
             return data.data.newComment.body
         })
-        .catch((err) => {
-            if (err) {
-                return err
-            }
-        })
+
 }
 
 export function getAllUsers() {
     return axios.get("https://project-nc-news-adrian-sartini.onrender.com/api/users/")
         .then((data) => {
             return data.data.users
-        }).catch((err) => {
-            if (err) {
-                return err
-            }
         })
+
 }
 
 export function deleteCommentById(comment_id) {
@@ -68,10 +57,6 @@ export function deleteCommentById(comment_id) {
         .then((data) => {
             return data
         })
-        .catch((err) => {
-            if (err) {
-                return err
-            }
-        })
+ 
 }
 

@@ -14,6 +14,7 @@ function AllArticles() {
                 setLoading(false);
                 setArticles(data);
             })
+            .catch((err)=>{console.log(err)})
     }, []);
 
     return (<>
