@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom"
 import NavStyle from "../resources/NavStyle"
-import { LogingStatusContext } from "../context/LogingStatus"
-import { useContext } from "react"
+
 function NavBar() {
 
-	// const x=  useContext(LogingStatusContext)
 	return (<>
 		<NavStyle>
 			<nav className="menu" id="nav">

@@ -39,7 +39,7 @@ if(error){ return <ErrorPage/> }
             <GoodBox>
                 <div className="single-article">
                     <h3>{articleId.title}</h3>
-                    <img src={articleId.article_img_url}></img>
+                    <img className="articleImage" src={articleId.article_img_url}></img>
                     <h4>By: {articleId.author}<br></br>
                         Topic: {articleId.topic}
                     </h4>

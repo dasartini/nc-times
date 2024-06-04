@@ -15,8 +15,9 @@ function  Home(){
     return(<>
         {loading?  (<><Loading/></>) : (
             <div className="home">
-        <h1>Welcome to NC times</h1>
-        <img src="https://dudewipes.com/cdn/shop/articles/gigachad.jpg?v=1667928905&width=2048"></img>
+        <h1>Welcome to NC times
+        <img className="chad" src="https://dudewipes.com/cdn/shop/articles/gigachad.jpg?v=1667928905&width=2048"></img>
+        </h1> 
         </div>
         )}
         </>

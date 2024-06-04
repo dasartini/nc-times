@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 function ArticleCard({article}){
 
     return(
-        <Card className="articleCard" style={{}}>
-             <Card.Img title="article image" src={article.article_img_url}></Card.Img>
+        <Card className="articleCard">
+             <Card.Img className="articleImage"title="article image" src={article.article_img_url}></Card.Img>
             <Card.Body className="cardBody">
                <Link to={`/AllArticles/${article.article_id}`}> <Card.Title><h3>{article.title}</h3></Card.Title></Link>
                 <Card.Text>Author: {article.author}</Card.Text>
