@@ -13,7 +13,12 @@ function  Home(){
 
 
     return(<>
-        {loading?  (<><Loading/></>) : (<p>HomeWzzzebsite</p>)}
+        {loading?  (<><Loading/></>) : (
+            <div className="home">
+        <h1>Welcome to NC times</h1>
+        <img src="https://dudewipes.com/cdn/shop/articles/gigachad.jpg?v=1667928905&width=2048"></img>
+        </div>
+        )}
         </>
     )
 }
