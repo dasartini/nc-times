@@ -1,5 +1,6 @@
 body{
-      background-image: url("https://img.pixers.pics/pho_wat(s3:700/FO/52/05/80/24/700_FO52058024_9ccddbe31485c92a04793b34b93074c6.jpg,700,464,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,414,jpg)/wall-murals-old-newspaper-background.jpg.jpg");
+    background: #000;
+    background: radial-gradient(#222, #000);
 }
 h1{
     color: rgb(15, 190, 190);
@@ -18,3 +19,4 @@ align-items: center;
     margin-left : auto;
     margin-right: auto;
 }
+
