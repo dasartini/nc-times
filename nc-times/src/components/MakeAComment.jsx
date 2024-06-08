@@ -52,7 +52,7 @@ function MakeAComment({ article_id, comments, setComments }) {
                 required
 
             />
-            <button title="Post a comment" className="button-85">{isLoading ? (<>Pasting</>) : (<>Post</>)} </button>
+            <button title="Post a comment" className="button-85">{isLoading ? (<>Posting</>) : (<>Post</>)} </button>
 
 
         </form>
