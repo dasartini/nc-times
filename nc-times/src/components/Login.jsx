@@ -1,23 +1,27 @@
 import GoodBox from "../resources/GoodBox"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import LoginStyle from "../resources/LoginStyle"
 import { getAllUsers } from "../api"
+import { LogInContext } from "../context/LogIn"
+import { LogInStatusContext } from "../context/LoginStatus"
 
 function Login(){
-const [user, setUser] = useState('')
-const [loginStatus, setLogingStatus]= useState(false)
+const {logIn, setLogIn} = useContext(LogInContext)
+const {isLogIn, setIsLogIn} = useContext(LogInStatusContext)
+
 
 function handleSubmit(event){
 event.preventDefault()
-getAllUsers().then((data)=>{
-for(let userData of data){
-	console.log(userData.username)
-	console.log(user)
-	console.log(userData.username === user)
-	if(userData.username === user){return setLogingStatus(true)
 
-}else  setLogingStatus(false)
-}
+getAllUsers().then((data)=>{
+	for(let userData of data){
+	if( logIn === userData.username){
+		console.log("correct")
+		return setIsLogIn(true)
+	}
+	else { console.log('not correct')
+		return setIsLogIn(false)}
+	}
 })
 }
 
@@ -36,8 +40,8 @@ return(<>
 		<form className="card-form"
         onSubmit={(event)=>{handleSubmit(event)}}>
 			<div className="input">
-				<input type="text" className="input-field" value={user}
-                onChange={(event)=>{setUser(event.target.value)}}
+				<input type="text" className="input-field" value={logIn}
+                onChange={(event)=>{setLogIn(event.target.value)}}
                 required/>
 				<label className="input-label">Username</label>
 			</div>
