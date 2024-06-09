@@ -1,15 +1,27 @@
 import { Link } from "react-router-dom"
 import NavStyle from "../resources/NavStyle"
+import { useContext, useState, useEffect } from "react"
 import { LogInContext } from "../context/LogIn"
-import { useContext } from "react"
 import { LogInStatusContext } from "../context/LoginStatus"
-
+import GoodBox from "../resources/GoodBox"
 
 function NavBar() {
+	const {logIn, setLogIn} = useContext(LogInContext)
+	const {isLogIn, setIsLogIn} = useContext(LogInStatusContext)
 
-const {logIn, setLogIn} = useContext(LogInContext)
-const {isLogIn, setIsLogIn} = useContext(LogInStatusContext)
+	useEffect(() => {
+		const storedIsLogIn = localStorage.getItem('isLogIn');
+		if (storedIsLogIn === 'true') {
+		  setIsLogIn(true);
+		}
+	  }, [setIsLogIn]);
 
+	function handleLogOut() {
+		setIsLogIn(false)
+		setLogIn('')
+		localStorage.setItem('isLogIn', false)
+	
+	}
 	return (<>
 		<NavStyle>
 			<nav className="menu" id="nav">
@@ -40,9 +52,9 @@ const {isLogIn, setIsLogIn} = useContext(LogInStatusContext)
 				<span className="nav-item">
 					<span className="icon">
 						<i data-feather="bell"></i>
-						
 					</span>
-					<Link to={"/Login"}>Login</Link>
+					{!isLogIn? <Link to={"/Login"}>Log In</Link>: <button className="button-85" onClick={handleLogOut}>LogOut</button>  }
+					
 				</span>
 			</nav>
 		</NavStyle>

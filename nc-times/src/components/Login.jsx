@@ -1,5 +1,5 @@
 import GoodBox from "../resources/GoodBox"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import LoginStyle from "../resources/LoginStyle"
 import { getAllUsers } from "../api"
 import { LogInContext } from "../context/LogIn"
@@ -14,16 +14,23 @@ function handleSubmit(event){
 event.preventDefault()
 
 getAllUsers().then((data)=>{
+	console.log(data)
 	for(let userData of data){
 	if( logIn === userData.username){
 		console.log("correct")
+		setLogIn('')
+		localStorage.setItem('isLogIn', true)
 		return setIsLogIn(true)
 	}
 	else { console.log('not correct')
-		return setIsLogIn(false)}
+		setLogIn('')
+		localStorage.setItem('isLogIn', false)
+		setIsLogIn(false)}
 	}
 })
+
 }
+useEffect(()=>{},[setIsLogIn, logIn])
 
 
 return(<>
