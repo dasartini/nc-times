@@ -11,10 +11,13 @@ function ArticleById() {
     const [comments , setComments] = useState([])
     const [loading, setLoading] = useState(true);
     const [articleId, setArticleId] = useState({})
-    const [like, setLike] = useState('')
+    const [like, setLike] = useState(0)
     const { article_id, comment_id } = useParams()
     const [username ,setUsername]=useState("jessjelly")
     const [error, setError]= useState(null)
+    const [disableButton, setDisableButton]= useState(false)
+    const [existingVote, setExistingVote]= useState(0)
+  
 
     useEffect(() => {
         setLoading(true)
@@ -29,10 +32,33 @@ function ArticleById() {
     }, [])
 
     function handleVote(vote){
+     
 patchArticleById(article_id, vote).then((data)=>{
 setLike(data)
-})
+setDisableButton(true)
+if(vote === 1){setExistingVote(1)
     }
+if(vote === -1){setExistingVote(-1)
+    }
+})
+
+}
+// useEffect(()=>{},[kudos,setKudos, like, setLike])
+function handleUndo(existingVote){
+    patchArticleById(article_id, existingVote).then((data)=>{
+        setLike(data)
+        // if(kudos==='positive'){
+        //     setLike(data)}
+        // if(kudos==='negative'){
+        //     setLike(data)}
+console.log(data)
+    })
+
+        
+
+setDisableButton(false)
+}
+
 if(error){ return <ErrorPage/> }
     return (
         <>{loading ? (<><Loading /></>) : (
@@ -46,8 +72,9 @@ if(error){ return <ErrorPage/> }
                     <p>{articleId.body}</p>
                     <p>Posted at: {articleId.created_at}</p>
                     <p>Did you like this article?</p>
-                    <button onClick={()=>{handleVote(1)}} title="Up vote me!" className="button-85">Like</button>
-                    <button onClick={()=>{handleVote(-1)}} title="Down vote me!" className="button-85"> No Like</button>
+                    <button  disabled={disableButton}onClick={()=>{handleVote(1)}} title="Up vote me!">Like</button>
+                    <button disabled={disableButton} onClick={()=>{handleVote(-1)}} title="Down vote me!" > No Like</button>
+                    <p hidden={!disableButton}>Thanks for voting! <button onClick={()=>{handleUndo(existingVote)}}>↩️ </button></p>
                     <p>{like} People like this article</p>
                     <MakeAComment comments={comments} setComments={setComments} article_id={article_id}/>
                     <Comments comments={comments} setComments={setComments} username={username} article_id={article_id} comment_id={comment_id} />

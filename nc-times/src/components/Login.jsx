@@ -4,6 +4,7 @@ import LoginStyle from "../resources/LoginStyle"
 import { getAllUsers } from "../api"
 import { LogInContext } from "../context/LogIn"
 import { LogInStatusContext } from "../context/LoginStatus"
+import Home from "./Home"
 
 function Login(){
 const {logIn, setLogIn} = useContext(LogInContext)
@@ -14,11 +15,10 @@ function handleSubmit(event){
 event.preventDefault()
 
 getAllUsers().then((data)=>{
-	console.log(data)
 	for(let userData of data){
 	if( logIn === userData.username){
-		console.log("correct")
-		setLogIn('')
+
+		setLogIn(userData.username)
 		localStorage.setItem('isLogIn', true)
 		return setIsLogIn(true)
 	}
@@ -34,7 +34,7 @@ useEffect(()=>{},[setIsLogIn, logIn])
 
 
 return(<>
-    <GoodBox>
+{isLogIn==true? <Home/>: <GoodBox>
         <LoginStyle>
         <div className="loginStyle">
 	<div className="card">
@@ -62,7 +62,9 @@ return(<>
 	</div>
 </div>   
 </LoginStyle> 
-</GoodBox>
+</GoodBox>  }
+
+   
 </>)
 }
 
