@@ -13,8 +13,9 @@ function NavBar() {
 		const storedIsLogIn = localStorage.getItem('isLogIn');
 		if (storedIsLogIn === 'true') {
 		  setIsLogIn(true);
+		  setLogIn(localStorage.getItem('logIn'))
 		}
-	  }, [setIsLogIn]);
+	  }, [setIsLogIn, logIn]);
 
 	function handleLogOut() {
 		setIsLogIn(false)

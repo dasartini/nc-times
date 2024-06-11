@@ -20,11 +20,13 @@ getAllUsers().then((data)=>{
 
 		setLogIn(userData.username)
 		localStorage.setItem('isLogIn', true)
+		localStorage.setItem('logIn', userData.username)
 		return setIsLogIn(true)
 	}
 	else { console.log('not correct')
 		setLogIn('')
 		localStorage.setItem('isLogIn', false)
+		localStorage.setItem('logIn', '')
 		setIsLogIn(false)}
 	}
 })
