@@ -53,9 +53,16 @@ function NavBar() {
 					<span className="icon">
 						<i data-feather="bell"></i>
 					</span>
-					{!isLogIn? <Link to={"/Login"}>Log In</Link>: <button className="button-85" onClick={handleLogOut}>LogOut</button>  }
+					{!isLogIn? <Link to={"/Login"}>Log In</Link>:<>  <>  Logged as {logIn}</></>   }
 					
 				</span>
+				<span 
+				 className="nav-item">
+					<span className="icon">
+						<i data-feather="star"></i>
+					</span>
+					<button  hidden={!isLogIn} className="button-85" onClick={handleLogOut}>LogOut<><br></br></></button> 
+					</span>
 			</nav>
 		</NavStyle>
 	</>)
