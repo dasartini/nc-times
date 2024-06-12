@@ -72,8 +72,8 @@ if(error){ return <ErrorPage/> }
                     <p>{articleId.body}</p>
                     <p>Posted at: {articleId.created_at}</p>
                     <p>Did you like this article?</p>
-                    <button  disabled={disableButton}onClick={()=>{handleVote(1)}} title="Up vote me!">Like</button>
-                    <button disabled={disableButton} onClick={()=>{handleVote(-1)}} title="Down vote me!" > No Like</button>
+                    <button  disabled={disableButton}onClick={()=>{handleVote(1)}} title="Up vote me!">I Liked it </button>
+                    <button disabled={disableButton} onClick={()=>{handleVote(-1)}} title="Down vote me!" >Not for me</button>
                     <p hidden={!disableButton}>Thanks for voting! <button onClick={()=>{handleUndo(existingVote)}}>↩️ </button></p>
                     <p>{like} People like this article</p>
                     <MakeAComment comments={comments} setComments={setComments} article_id={article_id}/>

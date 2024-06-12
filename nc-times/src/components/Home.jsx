@@ -18,8 +18,8 @@ function Home() {
             <div className="home">
                 <TitleStyle>
                 <div className="wrapper">
-  <div className="bg"> Nc News </div>
-  <div className="fg"> Nc News</div>
+  <div className="bg"> Nc Times </div>
+  <div className="fg"> Nc Times</div>
 </div>
                 </TitleStyle>
                     <img className="chad" src="https://dudewipes.com/cdn/shop/articles/gigachad.jpg?v=1667928905&width=2048"></img>
