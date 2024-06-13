@@ -3,7 +3,6 @@ import NavStyle from "../resources/NavStyle"
 import { useContext, useState, useEffect } from "react"
 import { LogInContext } from "../context/LogIn"
 import { LogInStatusContext } from "../context/LoginStatus"
-import GoodBox from "../resources/GoodBox"
 
 function NavBar() {
 	const {logIn, setLogIn} = useContext(LogInContext)
@@ -37,12 +36,6 @@ function NavBar() {
 						<i data-feather="search"></i>
 					</span>
 					<Link to={'/allArticles'}>All Articles</Link>
-				</span>
-				<span className="nav-item">
-					<span className="icon">
-						<i data-feather="bell"></i>
-					</span>
-					<a href="#">Notifications</a>
 				</span>
 				<span className="nav-item">
 					<span className="icon">
