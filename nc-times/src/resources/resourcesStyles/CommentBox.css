@@ -6,7 +6,7 @@
   margin: 20px;
   transition: box-shadow 0.3s ease;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   position: relative;
 }
 
@@ -48,3 +48,4 @@
 .deleteButton:hover {
   color: red;
 }
+

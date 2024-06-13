@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getCommentsByArticleId, deleteCommentById, getAllUsers } from "../api";
 import CommentBox from '../resources/CommentBox'
+import { LogInContext } from "../context/LogIn";
 
 function Comments({ article_id, username, comments, setComments }) {
     const [avatars, setAvatars] = useState({})
+    const {logIn} = useContext(LogInContext)
 
     useEffect(() => {
         getCommentsByArticleId(article_id).then((data) => {
@@ -43,7 +45,7 @@ function Comments({ article_id, username, comments, setComments }) {
                                 {comment.body}
                             </div>
                         </div>
-                        {username === comment.author && (
+                        {logIn === comment.author && (
                             <button className="deleteButton" onClick={() => handleDelete(comment.comment_id)}>❌</button>
                         )}
                     </CommentBox>
