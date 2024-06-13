@@ -1,5 +1,6 @@
 .goodBox{
-    background-color: #dfc88a;
+  background: #4d4a4a;
+  background: radial-gradient(#b41010, #000);
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     padding:1rem;
