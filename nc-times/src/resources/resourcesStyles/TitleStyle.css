@@ -44,8 +44,3 @@ div.fg {
   transform: scale(1);
 }
 
-@media (max-width: 600px) {
-  .wrapper > div {
-    font-size: clamp(1.5em, 8vw, 10rem);
-  }
-}
