@@ -1,9 +1,9 @@
 import './resourcesStyles/CommentBox.css'
-function CommentBox(){
+function CommentBox(props){
     
     const { children} = props
     return(
-    <div className="CommentBox"> {children}</div>
+    <div className="commentBox"> {children}</div>
     
     
 )
