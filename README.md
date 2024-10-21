@@ -2,6 +2,10 @@
 
 NC TIMES is a front-end project made with React and Vite. Making different requests to my previously built API will display different articles and comments about them. Feel free to navigate around with the user-friendly navigation bar. You can also filter the articles by the different existing topics. Once chosen, choose the order of display.
 
+<div style="text-align: center;">
+<img src="https://asartini.dev/assets/nctimes-D8tQJgI-.gif" alt="App Screenshot"  width="500">
+</div>
+
 Coming soon, you will be able to log in and make comments under your personal account.
 
 To access the app, use the following link: [[NC TIMES](https://bohemianrapsodyjournal.netlify.app/)]
