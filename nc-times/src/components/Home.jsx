@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import Loading from "../resources/Loading"
 import TitleStyle from "../resources/TitleStyle"
+import HomeBox from "./HomeBox"
 
 
 
@@ -22,8 +23,9 @@ function Home() {
   <div className="fg"> Nc Times</div>
 </div>
                 </TitleStyle>
+                <HomeBox/>
                     <img className="chad" src="https://dudewipes.com/cdn/shop/articles/gigachad.jpg?v=1667928905&width=2048"></img>
-              
+                    
             </div>
         )}
     </>
