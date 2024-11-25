@@ -1,6 +1,4 @@
-.loader {
-    background: #000;
-    background: radial-gradient(#222, #000);
+/* .loader {
     bottom: 0;
     left: 0;
     overflow: hidden;
@@ -8,8 +6,20 @@
     right: 0;
     top: 0;
     z-index: 99999;
-}
 
+} */
+.loader {
+    position: absolute; /* Position relative to the parent */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex; /* Center the loader */
+    align-items: center;
+    justify-content: center;
+    z-index: 99999; /* Ensure it appears above content */
+    background: rgba(255, 255, 255, 0.8); /* Optional: Semi-transparent background overlay */
+}
 .loader-inner {
     bottom: 0;
     height: 60px;

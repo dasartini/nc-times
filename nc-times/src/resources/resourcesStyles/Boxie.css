@@ -4,7 +4,11 @@
     gap: 15px;
     padding: 20px;
   }
-  
+  .latestNews{
+    background-image: url('../images/bar_magic.jpeg');
+    border-radius:2rem;
+    margin-bottom: 2rem;
+  }
   .item {
     background-color: #222; 
     border-radius: 10px; 
@@ -19,7 +23,7 @@
   }
   
   .itemImage {
-    width: 15rem;
+    width: 100%;
     height: auto;
     display: block;
     border-bottom: 2px solid #444; 

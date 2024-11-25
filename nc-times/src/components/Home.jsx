@@ -23,8 +23,8 @@ function Home() {
   <div className="fg"> Nc Times</div>
 </div>
                 </TitleStyle>
+                <h1>Latest news:</h1>
                 <HomeBox/>
-                    <img className="chad" src="https://dudewipes.com/cdn/shop/articles/gigachad.jpg?v=1667928905&width=2048"></img>
                     
             </div>
         )}
