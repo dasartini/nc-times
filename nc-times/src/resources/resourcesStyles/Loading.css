@@ -1,15 +1,16 @@
-.loader {
-    background: #000;
-    background: radial-gradient(#222, #000);
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 99999;
-}
 
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999; 
+    background: rgba(255, 255, 255, 0.637); 
+}
 .loader-inner {
     bottom: 0;
     height: 60px;
@@ -19,6 +20,10 @@
     right: 0;
     top: 0;
     width: 100px;
+}
+.loader-inner {
+    position: relative;
+    margin: auto;
 }
 
 .loader-line-wrap {

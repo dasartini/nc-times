@@ -25,24 +25,21 @@ function NavBar() {
 	return (<>
 		<NavStyle>
 			<nav className="menu" id="nav">
-				<span className="nav-item active">
+			<Link to={'/'}>
+				<span className="nav-item">
 					<span className="icon">
 						<i data-feather="home"></i>
 					</span>
-					<Link to={'/'}>Home</Link>
+					Home
 				</span>
+				</Link>
 				<span className="nav-item">
 					<span className="icon">
 						<i data-feather="search"></i>
 					</span>
 					<Link to={'/allArticles'}>All Articles</Link>
 				</span>
-				<span className="nav-item">
-					<span className="icon">
-						<i data-feather="star"></i>
-					</span>
-					<a href="#">Favorites</a>
-				</span>
+				
 				<span className="nav-item">
 					<span className="icon">
 						<i data-feather="bell"></i>

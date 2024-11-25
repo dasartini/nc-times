@@ -1,6 +1,10 @@
 body{
-    background: #000;
-    background: radial-gradient(#222, #000);
+    background-image: url('../src/resources/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; 
+    background-position: center; 
+  
 }
 h1{
     color: rgb(15, 190, 190);

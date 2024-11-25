@@ -1,5 +1,4 @@
 # The NC TIMES
-
 NC TIMES is a front-end project made with React and Vite. Making different requests to my previously built API will display different articles and comments about them. Feel free to navigate around with the user-friendly navigation bar. You can also filter the articles by the different existing topics. Once chosen, choose the order of display.
 
 <div style="text-align: center;">
@@ -37,4 +36,3 @@ If you want to contribute to this repo and/or run it locallly, feel free to do s
    npm run dev
    ```
 To open the app locally place your mouse on the link in the terminal and click it whilst pressing ctrl.
-
