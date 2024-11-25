@@ -1,6 +1,5 @@
 import { getAllArticles } from "../api";
 import { useState, useEffect } from "react";
-import ArticleCard from "../resources/ArticleCard";
 import Boxie from "../resources/Boxie";
 import { Link } from "react-router-dom";
 import Loading from "../resources/Loading";

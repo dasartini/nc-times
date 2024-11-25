@@ -24,3 +24,8 @@ align-items: center;
     margin-right: auto;
 }
 
+a {
+    color: inherit; /* Inherit the text color from the parent */
+    text-decoration: none; /* Remove underline */
+  }
+  
