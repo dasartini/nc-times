@@ -1,0 +1,29 @@
+.latest {
+    background-color: rgba(222, 225, 228, 0.76);
+    width: 100%;
+    overflow: hidden; /* Hide content outside the container */
+    position: relative;
+    height: 50px; /* Fixed height for alignment */
+    display: flex;
+    align-items: center; /* Vertically center the content */
+  }
+  
+  .marquee {
+    display: flex; /* Allow inline elements to scroll continuously */
+    gap: 50px; /* Space between duplicated h3 elements */
+    animation: marquee 20s linear infinite; /* Continuous scrolling animation */
+  }
+  
+  .marquee h3 {
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(-20%); /* Start at the initial position */
+    }
+    100% {
+      transform: translateX(-100%); /* Move left by the width of one full cycle */
+    }
+  }
+  

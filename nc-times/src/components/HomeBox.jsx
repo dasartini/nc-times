@@ -14,7 +14,13 @@ function HomeBox() {
     getAllArticles()
       .then((data) => {
         setLoading(false);
-        setArticles(data.splice(0, 8));
+
+        for (let i = data.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [data[i], data[j]] = [data[j], data[i]];
+        }
+
+        setArticles(data.slice(0, 8));
       })
       .catch((err) => {
         setLoading(false);
@@ -22,24 +28,23 @@ function HomeBox() {
       });
   }, []);
 
- 
 
   return (
     <Boxie>
       <div className="latestNews">
-        {loading? (<Loading/>):
-        <div className="image-container">
-        {articles.map((article, index) => (
-          <Link to={`/AllArticles/${article.article_id}`}>
-          <div key={index} className="item">
-            <img src={article.article_img_url} alt={article.title} className="itemImage" />
-            <p className="itemTitle" title={article.title}>{article.title}</p>
+        {loading ? (<Loading />) :
+          <div className="image-container">
+            {articles.map((article, index) => (
+              <Link to={`/AllArticles/${article.article_id}`}>
+                <div key={index} className="item">
+                  <img src={article.article_img_url} alt={article.title} className="itemImage" />
+                  <p className="itemTitle" title={article.title}>{article.title}</p>
+                </div>
+              </Link>
+            ))}
           </div>
-          </Link>
-        ))}
-      </div>
         }
-      
+
       </div>
     </Boxie>
   );
