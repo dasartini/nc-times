@@ -19,9 +19,9 @@ function Home() {
         {loading ? (<><Loading /></>) : (
             <div className="home">
                 <TitleStyle>
-                <div className="wrapper">
-  <div className="bg"> Nc Times </div>
-  <div className="fg"> Nc Times</div>
+                <div class="titleContainer">
+  <h1 className="titleH1">NC TIMES</h1>
+<p className="titlep">Creative Gazette</p>
 </div>
                 </TitleStyle>
              <Latest>

@@ -1,83 +1,91 @@
-
-nav,
-.nav-item {
+.navBar {
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 3rem;
 	display: flex;
-	padding: 0.1rem;
-}
-
-nav {
-	display: flex;
-	flex-direction: row;
+	justify-content: space-between;
 	align-items: center;
-	border-radius: 50px;
-	background-image: linear-gradient(
-		rgb(3, 2, 2) 13%,
-		rgb(43, 17, 17) 40%,
-		#9f0505 86%
-	);
-	
-	color: rgba(255, 255, 255, 0.6);
-	text-shadow: 0 -2px 0 black;
-	cursor: pointer;
+	background-image: url('../images/paper.jpg');
+	background-size: 20%; 
+	color: rgb(0, 0, 0);
 	box-shadow: 1px 2px 4px rgb(20, 20, 20), 0 4px 12px rgb(10, 10, 10);
+	padding: 0 10px;
 }
 
-.nav-item {
+.logo {
+	height: 2rem;
+}
+
+.buttonsNav {
 	display: flex;
+	gap: 15px;
 	flex-direction: row;
 	align-items: center;
-	justify-content: center;
-	margin-left: 50px;
-	margin-right: 50px;
-	font-size: 0.8999rem;
-	line-height: 1rem;
-
-	min-width: 120px;
-	
-	transition: all 80ms ease;
-
-	/* &.active {
-		color: primary;
-		text-shadow: 0 0 3px hsla(260, 100%, 70%, 0.7);
-	} */
-
-	/* &:not(.active):hover {
-		color: rgba(255, 255, 255, 0.87);
-	} */
-
-	&:hover > .icon .subicon {
-		height: 32px;
-		width: 32px;
-		border-radius: 32px;
-		top: -16px;
-		right: -16px;
-		border-color: white;
+	transition: transform 0.3s ease-in-out;
+	z-index: 999;
 	}
 
-	&:not(:first-of-type) {
-		border-left: 1px solid rgb(60, 60, 60);
-	}
-	&:not(:last-of-type) {
-		border-right: 0.1rem solid black;
+.burgerMenu {
+	display: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+	padding: 0 10px;
+	color: #000;
+	position: relative; 
+	z-index: 1000;
+}
+
+@media only screen and (max-width: 700px) {
+	.buttonsNav {
+		position: fixed;
+		top: 0;
+		right: 0;
+		height: 100vh;
+		width: 250px;
+		background-color: rgba(255, 255, 255, 0.9);
+		box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+		padding: 1rem;
+		transform: translateX(100%);
 	}
 
-	a {
-		color: inherit;
-		text-decoration: none;
-		padding:10px;
-	}}
+	.buttonsNav.open {
+		transform: translateX(0);
+	}
 
-	@media only screen and (max-width: 700px) {
-		nav,
-		.nav-item {
-			flex-direction: column;
-		    margin-left: auto;
-            margin-right: auto;
-		}
-	
-		.nav-item {
-			min-width: unset;
-			margin-left: auto;
-			margin-right: auto;
-		}}
-	
+	.nav-item {
+		margin: 1rem 0;
+		width: 100%;
+	}
+
+	.burgerMenu {
+		display: block;
+		position: fixed; /* Ensures the X stays in place */
+		top: 0.5rem;
+		right: 0.5rem; /* Adjust position as needed */
+	}
+}
+
+  /* @media only screen and (max-width: 700px) {
+	.menu {
+	  flex-direction: column; 
+	  align-items: center;
+	}
+  
+	.nav-item {
+	  margin: 10px 0;
+	  width: 100%;
+	  text-align: center;
+	}
+  
+	button {
+	  width: 100%; 
+	  text-align: center;
+	}
+  }
+   */

@@ -20,11 +20,10 @@ function Suppliers(props) {
     }
 
     return (
-        <div className="Suppliers-container">
             <Select options={options}
                 onChange={handleSelect} />
 
-        </div>
+    
 
     )
 }

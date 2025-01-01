@@ -22,22 +22,28 @@ function TopicsBar(props) {
 
 
     <>
+    
       <TopicBarStyle>
-        <div className="topcoat-button-bar full">
-          <div className="topcoat-button-bar__item">
-            <button onClick={() => { handleClick("coding") }} className="topcoat-button-bar__button full">Coding</button>
-          </div>
-          <div className="topcoat-button-bar__item">
-            <button onClick={() => { handleClick("football") }} className="topcoat-button-bar__button full">Football</button>
-          </div>
-          <div className="topcoat-button-bar_item">
-            <button onClick={() => { handleClick("cooking") }} className="topcoat-button-bar__button full">Cooking</button>
-          </div>
-        </div>
+        <div className="topicBarCont">
+        <h3>Filter articles:</h3>
+      <div className="topic-bar">
+      <button onClick={() => handleClick("coding")} className="topic-button">
+        Coding
+      </button>
+      <button onClick={() => handleClick("football")} className="topic-button">
+        Football
+      </button>
+      <button onClick={() => handleClick("cooking")} className="topic-button">
+        Cooking
+      </button>
+      </div>
+    </div>
       </TopicBarStyle>
+      <div className="Suppliers-container">
+        <p style={{marginLeft:"10px"}}>Sort by:</p>
       <Suppliers articles={articles} setArticles={setArticles} query={query} sequence={sequence} setSequence={setSequence} show={show} setShow={setShow} />
-      {show? (<SortButtons articles={articles} setArticles={setArticles} query={query} sequence={sequence}/>): (<>XD</>)}
-
+      {show? (<SortButtons articles={articles} setArticles={setArticles} query={query} sequence={sequence}/>): (<></>)}
+      </div>
       
 
     </>

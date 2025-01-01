@@ -1,0 +1,13 @@
+
+.allArticlesContainer{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#root{
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

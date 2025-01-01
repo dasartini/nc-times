@@ -64,7 +64,7 @@ if(error){ return <ErrorPage/> }
         <>{loading ? (<><Loading /></>) : (
             <GoodBox>
                 <div className="single-article">
-                    <h3>{articleId.title}</h3>
+                    <h1>{articleId.title}</h1>
                     <img className="articleImage" src={articleId.article_img_url}></img>
                     <h4>By: {articleId.author}<br></br>
                         Topic: {articleId.topic}
@@ -72,8 +72,10 @@ if(error){ return <ErrorPage/> }
                     <p>{articleId.body}</p>
                     <p>Posted at: {articleId.created_at}</p>
                     <p>Did you like this article?</p>
-                    <button  disabled={disableButton}onClick={()=>{handleVote(1)}} title="Up vote me!">I Liked it </button>
-                    <button disabled={disableButton} onClick={()=>{handleVote(-1)}} title="Down vote me!" >Not for me</button>
+                    <div style={{display:"flex", flexDirection:"row", alignItems:"center", justifyContent:"center", gap:"1rem"}}>
+                    <button className="topic-button"  disabled={disableButton}onClick={()=>{handleVote(1)}} title="Up vote me!">I Liked it </button>
+                    <button className="topic-button" disabled={disableButton} onClick={()=>{handleVote(-1)}} title="Down vote me!" >Not for me</button>
+                    </div>
                     <p hidden={!disableButton}>Thanks for voting! <button onClick={()=>{handleUndo(existingVote)}}>↩️ </button></p>
                     <p>{like} People like this article</p>
                     <MakeAComment comments={comments} setComments={setComments} article_id={article_id}/>

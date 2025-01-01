@@ -36,19 +36,29 @@ function Comments({ article_id, username, comments, setComments }) {
 
                     return (
                         <CommentBox key={comment.comment_id} className="commentBox">
-                        <img className="avatar" src={avatarUrl} alt={`${comment.author}'s avatar`} />
-                        <div className="commentDetails">
+                        <img
+                          className="avatar"
+                          src={avatarUrl}
+                          alt={`${comment.author}'s avatar`}
+                        />
+                        <div className="commentContent">
+                          <div className="commentHeader">
                             <div className="commentAuthor">
-                                {comment.author} {comment.created_at === "just now" ? "" : "at"} {comment.created_at}
+                              {comment.author}{" "}
+                              {comment.created_at === "just now" ? "" : "at"} {comment.created_at}
                             </div>
-                            <div className="commentBody">
-                                {comment.body}
-                            </div>
+                            {logIn === comment.author && (
+                              <button
+                                className="deleteButton"
+                                onClick={() => handleDelete(comment.comment_id)}
+                              >
+                                ❌
+                              </button>
+                            )}
+                          </div>
+                          <div className="commentBody">{comment.body}</div>
                         </div>
-                        {logIn === comment.author && (
-                            <button className="deleteButton" onClick={() => handleDelete(comment.comment_id)}>❌</button>
-                        )}
-                    </CommentBox>
+                      </CommentBox>
                     )
                 })}
             </div>
