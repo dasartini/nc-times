@@ -23,13 +23,13 @@ if(error){
 }else
     return (<>
         {loading ? (<><Loading /></>) :
-            (<div>
+            (<div className="allArticlesContainer">
                 <TopicsBar articles={articles} setArticles={setArticles} loading={loading} />
-                <ul>
+                <div>
                     {articles.map((article) => (
                         <ArticleCard key={article.article_id} article={article}></ArticleCard>
                     ))}
-                </ul>
+                </div>
             </div>
             )}
     </>

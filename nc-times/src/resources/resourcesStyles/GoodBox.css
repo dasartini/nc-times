@@ -84,3 +84,10 @@ margin-right: auto;
   top: 0;
   border-radius: 10px;
 }
+
+@media (max-width : 768px){
+  .goodBox{
+    margin: 2rem 0rem;
+  }
+
+}

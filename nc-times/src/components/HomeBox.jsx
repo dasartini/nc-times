@@ -31,7 +31,9 @@ function HomeBox() {
   return (
     <Boxie>
       <div className="latestNews">
-        {loading ? (<Loading />) :
+        {loading ? (<><div style={{display:"flex", flexDirection:"row", alignItems:"center", justifyContent:"center"}}><Loading /><p style={{zIndex:10000}}>Data being fetched from api...<br/>This might take a minute, thanks for your patience</p>
+      
+        </div></>) :
           <div className="image-container">
             {articles.map((article, index) => (
               <Link to={`/AllArticles/${article.article_id}`}>

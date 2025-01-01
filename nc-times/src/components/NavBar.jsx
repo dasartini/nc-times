@@ -77,7 +77,7 @@ function NavBar() {
 
 					<button
 						hidden={!isLogIn}
-						className="button-85"
+						className="topic-button"
 						onClick={handleLogOut}
 					>
 						Log Out
