@@ -16,9 +16,10 @@ function SortButtons(props) {
 
     return (
         <>
-            <button title="Descending order" onClick={() => { handleClickOrder("DESC") }} className="button-85"> Sort by DESC</button>
-            <button title="Ascending order" onClick={() => { handleClickOrder("ASC") }} className="button-85"> Sort by ASC</button>
-
+        <div style={{ display:"flex", gap:"10px", alignItems:"center", justifyContent:"center", marginTop:"10px"}}>
+            <button title="Descending order" onClick={() => { handleClickOrder("DESC") }} className="topic-button"> Sort by DESC</button>
+            <button title="Ascending order" onClick={() => { handleClickOrder("ASC") }} className="topic-button"> Sort by ASC</button>
+</div>
         </>)
 
 

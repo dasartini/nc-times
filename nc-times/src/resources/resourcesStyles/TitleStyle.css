@@ -1,4 +1,5 @@
 .wrapper {
+
   display: grid;
   grid-template-areas: 'overlap';
   place-content: center;
@@ -25,6 +26,8 @@
 }
 
 div.bg {
+  margin-top: 3rem;
+
   background-image: repeating-linear-gradient(105deg, 
     var(--gold) 0%, 
     var(--dark-shadow) 5%,
@@ -36,6 +39,7 @@ div.bg {
 }
 
 div.fg {
+  margin-top: 3rem;
   background-image: repeating-linear-gradient(5deg,  
     var(--gold) 0%, 
     var(--light-shadow) 23%, 

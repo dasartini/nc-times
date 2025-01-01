@@ -13,7 +13,7 @@
     overflow: hidden; 
   }
   .item {
-    background-color: #222; 
+    background-color: #b9b8b8; 
     border-radius: 10px; 
     overflow: hidden;
     text-align: left;
@@ -36,7 +36,7 @@
     margin: 10px;
     font-size: clamp(0.8rem, 1vw, 1rem);
     line-height: 1.4;
-    color: #ccc;
+    color: #000000;
   }
   
   

@@ -1,6 +1,5 @@
 .commentBox {
-  background: #000;
-    background: radial-gradient(#222, #000);
+    background: radial-gradient(#ebe3e3, #efebeb);
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -10,7 +9,7 @@
   align-items: flex-start;
   position: relative;
   flex-wrap: wrap;
-  color:aqua
+  color:rgb(0, 0, 0)
 
 }
 

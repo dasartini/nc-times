@@ -1,15 +1,15 @@
 .goodBox{
-  background: #4d4a4a;
-  background: radial-gradient(#b41010, #000);
+  background: #b4b1b1;
+
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     padding:1rem;
-    margin:1rem;
+    margin:5rem;
     transition: box-shadow 0.3s ease;
     align-self: center;
     list-style-type: none;
     text-align: center;
-    color: #00ffd5;
+    color: #000000;
 }
 .articleImage{
   border-radius: 20px;
